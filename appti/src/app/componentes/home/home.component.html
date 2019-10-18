@@ -1,0 +1,43 @@
+
+<ion-content class="card-background-page" padding>
+	
+			<div class="col-sm-2 col-md-12">
+				<button  *ngIf="bandera" id="idioma-esp" (mousedown)="cambiarIdioma(bandera)" >
+					<div class="sombreado"></div>
+					<img  src="./assets/images/español.png" alt="" />      
+				</button>
+			</div>
+
+	  	<div class="col-sm-2 col-md-12">
+			 <button  *ngIf="!bandera" id="idioma-esp" (mousedown)="cambiarIdioma(bandera)" >
+				  <div class="sombreado"></div>
+			  	<img  src="./assets/images/ingles.png" alt="" />      
+		 	 </button>
+	  	</div>
+		<br>
+
+			<div class="col-sm-2 col-md-12">
+					<button   id="colores" (click)="reproducirAudio('colores')" routerLink="juego" >
+					<div class="sombreado"></div>
+					<img  src="./assets/images/colores.png" alt="" />      
+				</button>
+			</div>
+
+			<div class="col-sm-2 col-md-12">
+					<button  id="numeros" (click)="reproducirAudio('numeros')" routerLink="numero">
+					<div class="sombreado"></div>
+					<img  src="./assets/images/numeros.png" alt="" />      
+				</button>
+			</div>
+
+			<div class="col-sm-2 col-md-12">
+					<button id="animales" (click)="reproducirAudio('animales')" routerLink="animal" >
+					<div class="sombreado"></div>
+					<img  src="./assets/images/animales.png" alt=""/>      
+				</button>
+			</div>
+ 
+
+  </ion-content>
+
+<router-outlet></router-outlet>

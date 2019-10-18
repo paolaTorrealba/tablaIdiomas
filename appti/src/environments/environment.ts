@@ -6,6 +6,14 @@ export const environment = {
   production: false
 };
 
+export const firebaseConfig = {
+  apiKey: "AIzaSyC0uRC-gzAJTg8GK38vdQtUkJG5MCPNWKg",
+  authDomain: "tablaidiomas.firebaseapp.com",
+  databaseURL: "https://tablaidiomas.firebaseio.com",
+  projectId: "tablaidiomas",
+  storageBucket: "tablaidiomas.appspot.com",
+  messagingSenderId: "641997945989"
+};
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
