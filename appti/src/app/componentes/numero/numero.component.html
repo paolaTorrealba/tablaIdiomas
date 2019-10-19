@@ -1,39 +1,30 @@
  <ion-content class="card-background-page" padding>
       <div class="row">	
 			<div class="col-sm-2 col-md-12">
-          <button (click)="reproducirAudio('btn1')">
-				    	<div class="sombreado"></div>
-				      <img id="img-btn1" src="{{img_uno}}" alt="">     
-			   	</button>
-			</div>
-
+          <ion-button style="height: 100px;" size="large" expand="block" (click)="reproducirAudio('btn1')">
+					      <img id="img-btn1" src="{{img_uno}}" alt="">     
+			   	</ion-button>
+				</div><br>
 	  	<div class="col-sm-2 col-md-12">
-          <button  (click)="reproducirAudio('btn2')">
-				    	<div class="sombreado"></div>
+          <ion-button style="height: 100px;" size="large" expand="block"  (click)="reproducirAudio('btn2')">
 				      <img id="img-btn1" src="{{img_dos}}" alt="">     
-			   	</button>
-			</div>
-
+			   	</ion-button>
+				</div><br>
 			<div class="col-sm-2 col-md-12">
-          <button  (click)="reproducirAudio('btn3')">
-				    	<div class="sombreado"></div>
+					<ion-button style="height: 100px;" size="large" expand="block"  (click)="reproducirAudio('btn3')">
 				      <img id="img-btn1" src="{{img_tres}}" alt="">     
-			   	</button>
-			</div>
-
+			   	</ion-button>
+        </div><br>
 			<div class="col-sm-2 col-md-12">
-          <button  (click)="reproducirAudio('btn4')">
-				    	<div class="sombreado"></div>
+          <ion-button style="height: 100px;" size="large" expand="block"  (click)="reproducirAudio('btn4')">
 				      <img id="img-btn1" src="{{img_cuatro}}" alt="">     
-			   	</button>
-			</div>
-
+			   	</ion-button>
+				</div><br>
       <div class="col-sm-2 col-md-12">
-          <button (click)="reproducirAudio('btn5')">
-				    	<div class="sombreado"></div>
+          <ion-button style="height: 100px;" size="large" expand="block" (click)="reproducirAudio('btn5')">
 				      <img id="img-btn1" src="{{img_cinco}}" alt="">     
-			   	</button>
-      </div>
+			   	</ion-button>
+				</div>
     </div>
   </ion-content>
 <router-outlet></router-outlet>

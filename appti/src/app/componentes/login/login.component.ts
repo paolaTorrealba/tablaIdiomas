@@ -4,6 +4,7 @@ import { AuthService } from "../../servicios/auth.service";
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
+import { timer } from 'rxjs';
 
 
 @Component({
@@ -13,32 +14,30 @@ import { auth } from 'firebase/app';
 })
 export class LoginComponent implements OnInit {
 
-  formulario = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl('')
-  });
-
+  
+  email: string;
+  password: string;
+  
+  showSplash = true;
   constructor(private authService: AuthService, private formB: FormBuilder) {
 
-    this.formulario = formB.group({
-      email: [null, Validators.compose([Validators.required, Validators.email])],
-      password: [null, Validators.compose([Validators.required, Validators.minLength(6)])]
-    })
 
    }
 
-  ngOnInit() {}
-
-  onSubmitLogin(formValues){
-    //hacer validaciones
-    this.authService.login(formValues.email, formValues.password);
+  ngOnInit() { 
+    timer(3000).subscribe(() => this.showSplash = false)
   }
 
+  onSubmitLogin(){
+   console.log("login");
+   console.log(this.email);
+    this.authService.login(this.email, this.password);
+  }
+  
+
   rellenarDatos(){
-    this.formulario.patchValue({
-      email: "tester@gmail.com",
-      password: "555555"
-    });
+    this.email="tester@gmail.com";
+    this.password= "555555";  
   }
   
 }

@@ -1,43 +1,33 @@
 
-<ion-content class="card-background-page" padding>
+<ion-content class="card-background-page" padding *ngIf="!showSplash">
 	
 			<div class="col-sm-2 col-md-12">
-				<button  *ngIf="bandera" id="idioma-esp" (mousedown)="cambiarIdioma(bandera)" >
-					<div class="sombreado"></div>
+				<ion-button    style="height: 150px;" size="large" expand="block"  *ngIf="bandera" id="idioma-esp" (mousedown)="cambiarIdioma(bandera)" >
 					<img  src="./assets/images/español.png" alt="" />      
-				</button>
+				</ion-button >
 			</div>
 
 	  	<div class="col-sm-2 col-md-12">
-			 <button  *ngIf="!bandera" id="idioma-esp" (mousedown)="cambiarIdioma(bandera)" >
-				  <div class="sombreado"></div>
+			 <ion-button style="height: 150px;" size="large" expand="block"  *ngIf="!bandera" id="idioma-esp" (mousedown)="cambiarIdioma(bandera)" >
 			  	<img  src="./assets/images/ingles.png" alt="" />      
-		 	 </button>
+		 	 </ion-button >
 	  	</div>
 		<br>
-
 			<div class="col-sm-2 col-md-12">
-					<button   id="colores" (click)="reproducirAudio('colores')" routerLink="juego" >
-					<div class="sombreado"></div>
-					<img  src="./assets/images/colores.png" alt="" />      
-				</button>
+				<ion-button style="height: 150px;" size="large" expand="block"  id="colores" (click)="reproducirAudio('colores')" routerLink="juego" >
+					<img  src="./assets/images/colores.png" alt="" /> 
+				</ion-button> 
 			</div>
-
 			<div class="col-sm-2 col-md-12">
-					<button  id="numeros" (click)="reproducirAudio('numeros')" routerLink="numero">
-					<div class="sombreado"></div>
-					<img  src="./assets/images/numeros.png" alt="" />      
-				</button>
+				<ion-button style="height: 150px;" size="large" expand="block"   id="numeros" (click)="reproducirAudio('numeros')" routerLink="numero">
+					<img  src="./assets/images/numeros.png" alt="" /> 
+				</ion-button>	
 			</div>
-
 			<div class="col-sm-2 col-md-12">
-					<button id="animales" (click)="reproducirAudio('animales')" routerLink="animal" >
-					<div class="sombreado"></div>
-					<img  src="./assets/images/animales.png" alt=""/>      
-				</button>
+				<ion-button style="height: 150px;" size="large" expand="block"  id="animales" (click)="reproducirAudio('animales')" routerLink="animal">
+					<img  src="./assets/images/animales.png" alt="" /> 
+				</ion-button>					
 			</div>
- 
-
   </ion-content>
 
 <router-outlet></router-outlet>

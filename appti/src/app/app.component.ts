@@ -11,7 +11,8 @@ import { timer } from 'rxjs/observable/timer';
 })
 export class AppComponent {
   
-  showSplash = true;
+  showSplash = true; // <-- show animation
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

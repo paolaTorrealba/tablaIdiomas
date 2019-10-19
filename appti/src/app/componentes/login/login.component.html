@@ -1,4 +1,4 @@
-<section class="login__section">
+<!-- <section class="login__section">
   
   <div class="login__card" [formGroup]="formulario">
     	
@@ -17,10 +17,7 @@
         </div>
 	    
 	    <button (click)="onSubmitLogin(formulario.value)" [disabled]="!formulario.valid" type="button" class="login__button "><label for="">Acceder</label> <img class="img-login" src="./assets/images/iniciar.svg" alt=""></button>
-	    <!-- 
-	    {{formulario.value | json}}
-	    {{formulario.valid | json}}
-	     -->
+	
   </div>
   
 </section>
@@ -45,7 +42,29 @@ height: 70px;
 width: 250px;
 position: center;
 margin-left: 50px;">Entrar</ion-button>
-<!--<h3>email : {{email}}</h3>
-<h3>pass : {{password}}</h3>-->
 </ion-content>
- 
+  -->
+  <ion-content padding *ngIf="!showSplash">
+    <br><br><br>
+    <div class=".col-sm-2 .col-md-12">
+      <img class="icon" src="/assets/icon/alarma_icon.png" alt="">
+    </div><br><br><br>
+    <ion-item>
+      <ion-label position="floating" > Correo electrónico</ion-label>
+      <ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" > Contraseña</ion-label>
+      <ion-input [(ngModel)]="password" type="password" name="password"></ion-input>
+    </ion-item>
+
+    <br>
+    <div class="login">
+        <button class="login, a" (click)="onSubmitLogin()">Entrar</button>	
+    </div>
+    <!--<ion-button class="login" (click)="onSubmitLogin()" expand="block">Entrar</ion-button>-->
+    <br>
+    
+    <p text-center routerLink="/registro">Crear cuenta</p>
+
+</ion-content>
