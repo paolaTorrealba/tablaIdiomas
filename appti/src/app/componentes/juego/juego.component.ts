@@ -154,5 +154,18 @@ export class JuegoComponent implements OnInit {
   
       
     }
+    idiomaEspaniol(){
+      this.reproducir('español');
+      localStorage.setItem('idioma', JSON.stringify("espaniol"));
+    }
+  
+    idiomaIngles(){
+      this.reproducir('english');
+      localStorage.setItem('idioma', JSON.stringify("ingles"));
+    }
+    idiomaPortugues(){
+      this.reproducir('portugues');
+      localStorage.setItem('idioma', JSON.stringify("portugues"));
+    }
   
   }

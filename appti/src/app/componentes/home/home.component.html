@@ -2,8 +2,7 @@
 <ion-content class="card-background-page" padding *ngIf="!showSplash">
 	 <!-- fab placed to the top end -->
 	      <ion-fab vertical="top" horizontal="end" slot="fixed">
-				  <ion-fab-button>
-				  <ion-icon name="add"></ion-icon>
+				  <ion-fab-button >						
 				  </ion-fab-button>				
 				  <ion-fab-list side="start">
 					<ion-fab-button  id="idioma-esp" (mousedown)="idiomaEspaniol()">
@@ -31,18 +30,18 @@
 	  	</div> -->
 		<br>
 			<div class="col-sm-2 col-md-12">
-				<ion-button style="height: 150px;" size="large" expand="block"  id="colores" (click)="reproducirAudio('colores')" routerLink="juego" >
-					<img  src="./assets/images/colores.png" alt="" /> 
+				<ion-button style="height: 190px;" size="large" expand="block"  id="colores" (click)="reproducirAudio('colores')" routerLink="juego" >
+					<img style="width: 60%;" src="./assets/images/colores.png" alt="" /> 
 				</ion-button> 
 			</div>
 			<div class="col-sm-2 col-md-12">
-				<ion-button style="height: 150px;" size="large" expand="block"   id="numeros" (click)="reproducirAudio('numeros')" routerLink="numero">
-					<img  src="./assets/images/numeros.png" alt="" /> 
+				<ion-button style="height: 190px;" size="large" expand="block"   id="numeros" (click)="reproducirAudio('numeros')" routerLink="numero">
+					<img style="width: 60%;" src="./assets/images/numeros.png" alt="" /> 
 				</ion-button>	
 			</div>
 			<div class="col-sm-2 col-md-12">
-				<ion-button style="height: 150px;" size="large" expand="block"  id="animales" (click)="reproducirAudio('animales')" routerLink="animal">
-					<img  src="./assets/images/animales.png" alt="" /> 
+				<ion-button style="height: 190px;" size="large" expand="block"  id="animales" (click)="reproducirAudio('animales')" routerLink="animal">
+					<img  style="width: 60%;" src="./assets/images/animales.png" alt="" /> 
 				</ion-button>					
 			</div>
   </ion-content>
