@@ -42,9 +42,9 @@ height: 70px;
 width: 250px;
 position: center;
 margin-left: 50px;">Entrar</ion-button>
-</ion-content>
-  -->
-  <ion-content padding *ngIf="!showSplash">
+</ion-content>-->
+  
+  <!-- <ion-content padding *ngIf="!showSplash">
     <br><br><br>
     <div class=".col-sm-2 .col-md-12">
       <img class="icon" src="/assets/icon/alarma_icon.png" alt="">
@@ -62,9 +62,45 @@ margin-left: 50px;">Entrar</ion-button>
     <div class="login">
         <button class="login, a" (click)="onSubmitLogin()">Entrar</button>	
     </div>
-    <!--<ion-button class="login" (click)="onSubmitLogin()" expand="block">Entrar</ion-button>-->
+    <ion-button class="login" (click)="onSubmitLogin()" expand="block">Entrar</ion-button>
     <br>
     
     <p text-center routerLink="/registro">Crear cuenta</p>
 
-</ion-content>
+</ion-content> -->
+<ion-fab vertical="top" horizontal="start" slot="fixed" *ngIf="!showSplash">
+    <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+    </ion-fab-button>					
+    <ion-fab-list side="buttom">
+            <ion-fab-button  id="idioma-esp" (mousedown)="rellenarAdmin()">
+                 Admin
+            </ion-fab-button>
+            <ion-fab-button  id="idioma-esp" (mousedown)="rellenarInvitado()" >
+                  Invitado
+            </ion-fab-button>
+            <ion-fab-button  id="idioma-esp" (mousedown)="rellenarUsuario()" >
+                   Usuario
+            </ion-fab-button>	
+            <ion-fab-button  id="idioma-esp" (mousedown)="rellenarAnonimo()" >
+                   Anonimo
+            </ion-fab-button>	
+            <ion-fab-button  id="idioma-esp" (mousedown)="rellenarTester()" >
+                   Tester
+            </ion-fab-button>		
+    </ion-fab-list>
+</ion-fab>
+
+
+<div class="login" *ngIf="!showSplash">
+     
+    
+      <form method="post">
+          <div>
+              <h1>Ingreso</h1> <br>
+          </div>
+          <ion-input class="nuevoinput" type="text" [(ngModel)]="email" name="email"></ion-input>
+          <ion-input class="nuevoinput"  [(ngModel)]="password" type="password" name="password"></ion-input>
+          <button (click)="onSubmitLogin()" class="btn btn-primary btn-block btn-large">Entrar</button>
+      </form>
+  </div>

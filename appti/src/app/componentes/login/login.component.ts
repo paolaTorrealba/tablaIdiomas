@@ -35,9 +35,42 @@ export class LoginComponent implements OnInit {
   }
   
 
-  rellenarDatos(){
-    this.email="tester@gmail.com";
+  rellenarTester(){
+    this.email="tester@tester.com";
     this.password= "555555";  
+    localStorage.setItem("email", JSON.stringify(this.email));
+    localStorage.setItem("password", JSON.stringify(this.password));
   }
+  rellenarAdmin(){
+    this.email="admin@admin.com";
+    this.password= "111111"; 
+    localStorage.setItem("email", JSON.stringify(this.email));
+    localStorage.setItem("password", JSON.stringify(this.password));
+  }
+
+  rellenarInvitado(){
+    this.email="invitado@invitado.com";
+    this.password= "222222"; 
+    localStorage.setItem("email", JSON.stringify(this.email));
+    localStorage.setItem("password", JSON.stringify(this.password));
+   
+  }
+ 
+  rellenarUsuario(){
+    this.email="usuario@usuario.com";
+    this.password= "333333"; 
+    localStorage.setItem("email", JSON.stringify(this.email));
+    localStorage.setItem("password", JSON.stringify(this.password));
+
+
+  }
+  rellenarAnonimo(){
+    this.email="anonimo@anonimo.com";
+    this.password= "444444"; 
+    localStorage.setItem("email", JSON.stringify(this.email));
+    localStorage.setItem("password", JSON.stringify(this.password));
+  }
+
+  
   
 }
