@@ -1,8 +1,25 @@
 
 <ion-content class="card-background-page" padding *ngIf="!showSplash">
-	
-			<div class="col-sm-2 col-md-12">
-				<ion-button    style="height: 150px;" size="large" expand="block"  *ngIf="bandera" id="idioma-esp" (mousedown)="cambiarIdioma(bandera)" >
+	 <!-- fab placed to the top end -->
+	      <ion-fab vertical="top" horizontal="end" slot="fixed">
+				  <ion-fab-button>
+				  <ion-icon name="add"></ion-icon>
+				  </ion-fab-button>				
+				  <ion-fab-list side="start">
+					<ion-fab-button  id="idioma-esp" (mousedown)="idiomaEspaniol()">
+						<img  src="./assets/images/español.png" alt="" />
+					</ion-fab-button>
+					<ion-fab-button  id="idioma-esp" (mousedown)="idiomaIngles()" >
+							<img  src="./assets/images/ingles.png" alt="" />
+					</ion-fab-button>
+					<ion-fab-button  id="idioma-esp" (mousedown)="idiomaPortugues()" >
+							<img  src="./assets/images/brazil.png" alt="" />
+					</ion-fab-button>		
+				  </ion-fab-list>
+		  </ion-fab>
+
+			<!-- <div class="col-sm-2 col-md-12">
+				<ion-button *ngIf="bandera" id="idioma-esp" (mousedown)="cambiarIdioma(bandera)" >
 					<img  src="./assets/images/español.png" alt="" />      
 				</ion-button >
 			</div>
@@ -11,7 +28,7 @@
 			 <ion-button style="height: 150px;" size="large" expand="block"  *ngIf="!bandera" id="idioma-esp" (mousedown)="cambiarIdioma(bandera)" >
 			  	<img  src="./assets/images/ingles.png" alt="" />      
 		 	 </ion-button >
-	  	</div>
+	  	</div> -->
 		<br>
 			<div class="col-sm-2 col-md-12">
 				<ion-button style="height: 150px;" size="large" expand="block"  id="colores" (click)="reproducirAudio('colores')" routerLink="juego" >

@@ -26,20 +26,35 @@ export class HomeComponent implements OnInit {
   ngOnInit() {}
 
 
-  cambiarIdioma(bandera){
-  	if (this.bandera) {
-  		this.bandera = false;
-  		this.reproducir('english');
-      localStorage.setItem('idioma', JSON.stringify(this.bandera));
-  	}
-  	else{
-  		this.bandera = true;
-  		this.reproducir('español');
-      localStorage.setItem('idioma', JSON.stringify(this.bandera));
-  	}
-  }
+  // cambiarIdioma(bandera){
+  // 	if (this.bandera) {
+  // 		this.bandera = false;
+  // 		this.reproducir('english');
+  //     localStorage.setItem('idioma', JSON.stringify(this.bandera));
+  // 	}
+  // 	else{
+  // 		this.bandera = true;
+  // 		this.reproducir('español');
+  //     localStorage.setItem('idioma', JSON.stringify(this.bandera));
+  // 	}
+	// }
+	
+	idiomaEspaniol(){
+		this.reproducir('español');
+		localStorage.setItem('idioma', JSON.stringify("espaniol"));
+	}
+
+	idiomaIngles(){
+		this.reproducir('english');
+		localStorage.setItem('idioma', JSON.stringify("ingles"));
+	}
+	idiomaPortugues(){
+		this.reproducir('portugues');
+		localStorage.setItem('idioma', JSON.stringify("portugues"));
+	}
 
   reproducir(nom_audio) {
+		console.log(nom_audio);
 		const audio = new Audio('assets/sounds/' + nom_audio + '.mp3');
 	  audio.play();
   }

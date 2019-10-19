@@ -1,4 +1,23 @@
   <ion-content class="card-background-page" padding>
+			<ion-fab vertical="top" horizontal="end" slot="fixed">
+					<ion-fab-button>
+					<ion-icon name="add"></ion-icon>
+					</ion-fab-button>				
+					<ion-fab-list side="buttom">
+						<ion-fab-button>animales</ion-fab-button>                 
+						<ion-fab-button>Numeros</ion-fab-button>			
+					</ion-fab-list>
+	</ion-fab>
+	<ion-fab vertical="top" horizontal="start" slot="fixed">
+			<ion-fab-button>
+			<ion-icon name="add"></ion-icon>
+			</ion-fab-button>				
+			<ion-fab-list side="buttom">
+				<ion-fab-button>Ingles</ion-fab-button>                 
+				<ion-fab-button>Español</ion-fab-button>	
+				<ion-fab-button>Portugues</ion-fab-button>
+			</ion-fab-list>
+		</ion-fab>
       <div class="row">	
 			<div class="col-sm-2 col-md-12">
 					<ion-button style="height: 100px;" size="large" expand="block" (click)="reproducirAudio('btn1')">
