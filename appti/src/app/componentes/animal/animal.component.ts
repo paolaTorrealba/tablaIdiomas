@@ -22,9 +22,8 @@ export class AnimalComponent implements OnInit {
     img_source5: string = "";
   
     constructor(public router: Router) {
-      this.idioma=JSON.parse(localStorage.getItem('idioma'));
-      // this.bandera = JSON.parse(localStorage.getItem('idioma'));
-      this.tipo_juego = localStorage.getItem('tipo_juego');
+      this.idioma = localStorage.getItem("idioma");
+      this.tipo_juego = localStorage.getItem("tipo_juego");
   
       this.img_source1 = "./assets/images/leon.png";
       this.img_source2 = "./assets/images/vaca.png";
@@ -43,85 +42,126 @@ export class AnimalComponent implements OnInit {
     }
   
     reproducirAudio(nom_audio){
-      console.log("animal audio:", nom_audio);
+      this.idioma = localStorage.getItem("idioma"); 
       switch (this.tipo_juego) {
         case "animales":
-          if (this.idioma=="espaniol") {
-            switch (nom_audio) {
-              case "btn1":
-                this.reproducir('leon');
-                break;
-              case "btn2":
-                this.reproducir('vaca');
-                break;
-              case "btn3":
-                this.reproducir('mono');
-                break;
-              case "btn4":
-                this.reproducir('oveja');
-                break;
-              case "btn5":
-                this.reproducir('conejo');
-                break;
-              default:
-                // code...
-                break;
-            }
+            switch (this.idioma) {    
+               case "espaniol":
+                      switch (nom_audio) {
+                        case "btn1":            
+                          this.reproducir('leon');
+                          break;
+                        case "btn2":
+                          this.reproducir('vaca');
+                          break;
+                        case "btn3":
+                          this.reproducir('mono');
+                          break;
+                        case "btn4":
+                          this.reproducir('oveja');
+                          break;
+                        case "btn5":
+                          this.reproducir('conejo');
+                          break;
+                        default:
+                          // code...
+                          break;
+                      }
+                      break;
+            case "ingles":              
+                      switch (nom_audio) {
+                        case "btn1":
+                          this.reproducir('lion');
+                          break;
+                        case "btn2":
+                          this.reproducir('cow');
+                          break;
+                        case "btn3":
+                          this.reproducir('monkey');
+                          break;
+                        case "btn4":
+                          this.reproducir('sheep');
+                          break;
+                        case "btn5":
+                          this.reproducir('rabbit');
+                          break;
+                        default:
+                          // code...
+                          break;
+                      }
+                      break;
+             case "portugues":
+                      switch (nom_audio) {
+                        case "btn1":            
+                          this.reproducir('leonP');
+                          break;
+                        case "btn2":
+                          this.reproducir('vacaP');
+                          break;
+                        case "btn3":
+                          this.reproducir('monoP');
+                          break;
+                        case "btn4":
+                          this.reproducir('ovejaP');
+                          break;
+                        case "btn5":
+                          this.reproducir('conejoP');
+                          break;
+                        default:
+                          // code...
+                          break;
+                      }
+                      break;
           }
-          else{
-            switch (nom_audio) {
-              case "btn1":
-                this.reproducir('lion');
-                break;
-              case "btn2":
-                this.reproducir('cow');
-                break;
-              case "btn3":
-                this.reproducir('monkey');
-                break;
-              case "btn4":
-                this.reproducir('sheep');
-                break;
-              case "btn5":
-                this.reproducir('rabbit');
-                break;
-              default:
-                // code...
-                break;
-            }
-          }
-          break;   
-  
-      
+          break;  
     }
-  
   }
 
   idiomaEspaniol(){
-		this.reproducir('español');
-		localStorage.setItem('idioma', JSON.stringify("espaniol"));
-	}
-
-	idiomaIngles(){
-		this.reproducir('english');
-		localStorage.setItem('idioma', JSON.stringify("ingles"));
-	}
-	idiomaPortugues(){
-		this.reproducir('portugues');
-		localStorage.setItem('idioma', JSON.stringify("portugues"));
+    this.reproducir('español');
+    // localStorage.setItem('idioma', JSON.stringify("espaniol"));
+    localStorage.setItem("idioma", "espaniol");
+  }
+  
+  idiomaIngles(){
+    this.reproducir('english');
+    // localStorage.setItem('idioma', JSON.stringify("ingles"));
+    localStorage.setItem("idioma", "ingles");
+  }
+  idiomaPortugues(){
+    this.reproducir('portugues');
+    localStorage.setItem("idioma", "portugues");
+    // localStorage.setItem('idioma', JSON.stringify("portugues"));
   }
   
   irANumeros(){
-    console.log("voy a numeros");
-    this.reproducir('numeros');
-    // localStorage.setItem('tipo_juego', JSON.stringify("numeros"));
+    switch (this.idioma) {    
+      case "portugues":
+             this.reproducir('numerosP');
+             break;
+      case "espaniol":
+             this.reproducir('numeros');
+             break;  
+      case "ingles":
+             this.reproducir('numbers');
+             break;  
+    } 
 		localStorage.setItem('tipo_juego', "numeros");
     this.router.navigate(['/home/numero'])
   }
 
   irAColores(){
-    console.log("voy a colores");
-    this.reproducir('colores');
+    switch (this.idioma) {    
+      case "portugues":
+             this.reproducir('coloresP');
+             break;
+      case "espaniol":
+             this.reproducir('colores');
+             break;  
+      case "ingles":
+             this.reproducir('colors');
+             break;  
+    } 
     localStorage.setItem('tipo_juego', "colores");
     this.router.navigate(['/home/juego'])
   }

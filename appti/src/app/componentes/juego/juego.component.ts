@@ -24,8 +24,9 @@ export class JuegoComponent implements OnInit {
   
     constructor(public router: Router) {
       // this.bandera = JSON.parse(localStorage.getItem('idioma'));
-      this.idioma= JSON.parse(localStorage.getItem('idioma'));
-      this.tipo_juego = localStorage.getItem('tipo_juego');
+      // this.idioma= JSON.parse(localStorage.getItem('idioma'));
+      this.idioma = localStorage.getItem("idioma");
+      this.tipo_juego = localStorage.getItem("tipo_juego");
       console.log(this.tipo_juego);
       console.log(this.idioma);
   
@@ -47,147 +48,143 @@ export class JuegoComponent implements OnInit {
     }
   
     ngOnInit() {
-      this.idioma= JSON.parse(localStorage.getItem('idioma'));
-      this.tipo_juego = localStorage.getItem('tipo_juego');
+      // this.idioma= JSON.parse(localStorage.getItem('idioma'));
+      this.idioma = localStorage.getItem("idioma");
+      this.tipo_juego = localStorage.getItem("tipo_juego");
       console.log("estoy en :",this.tipo_juego);
       console.log("el idioma es :",this.idioma);
     }
   
-    reproducir(nom_audio) {
-      const audio = new Audio('assets/sounds/' + nom_audio + '.mp3');
-      audio.play();
-    }
+    
   
     reproducirAudio(nom_audio){
-      //console.log(this.bandera);
-      //console.log(nom_audio);
-      //console.log(this.tipo_juego);
-  
+      this.idioma = localStorage.getItem("idioma");
+     console.log("estoy reproducioendo en idioma: ",this.idioma);
       switch (this.tipo_juego) {
         case "colores":
-          if (this.idioma=="espaniol") {
-            switch (nom_audio) {
-              case "btn1":
-                this.reproducir('amarillo');
-                break;
-              case "btn2":
-                this.reproducir('verde');
-                break;
-              case "btn3":
-                this.reproducir('naranja');
-                break;
-              case "btn4":
-                this.reproducir('azul');
-                break;
-              case "btn5":
-                this.reproducir('rojo');
-                break;
-              default:
-                // code...
-                break;
-            }
-          }
-          else{
-            switch (nom_audio) {
-              case "btn1":
-                this.reproducir('yellow');
-                break;
-              case "btn2":
-                this.reproducir('green');
-                break;
-              case "btn3":
-                this.reproducir('orange');
-                break;
-              case "btn4":
-                this.reproducir('blue');
-                break;
-              case "btn5":
-                this.reproducir('red');
-                break;
-              default:
-                // code...
-                break;
-            }
-          }
-          break;     
-        case "animales":
-          if (this.bandera) {
-            switch (nom_audio) {
-              case "btn1":
-                this.reproducir('perro');
-                break;
-              case "btn2":
-                this.reproducir('gato');
-                break;
-              case "btn3":
-                this.reproducir('raton');
-                break;
-              case "btn4":
-                this.reproducir('oso');
-                break;
-              case "btn5":
-                this.reproducir('conejo');
-                break;
-              default:
-                // code...
-                break;
-            }
-          }
-          else{
-            switch (nom_audio) {
-              case "btn1":
-                this.reproducir('dog');
-                break;
-              case "btn2":
-                this.reproducir('cat');
-                break;
-              case "btn3":
-                this.reproducir('mouse');
-                break;
-              case "btn4":
-                this.reproducir('bear');
-                break;
-              case "btn5":
-                this.reproducir('rabit');
-                break;
-              default:
-                // code...
-                break;
-            }
-          }
-          break;
-        default:
-          // code...
-          break;
+            switch (this.idioma) {    
+               case "portugues":
+                      switch (nom_audio) {
+                        case "btn1":
+                          this.reproducir('amarilloP');
+                          break;
+                        case "btn2":
+                          this.reproducir('verdeP');
+                          break;
+                        case "btn3":
+                          this.reproducir('naranjaP');
+                          break;
+                        case "btn4":
+                          this.reproducir('azulP');
+                          break;
+                        case "btn5":
+                          this.reproducir('rojoP');
+                          break;
+                        default:
+                          // code...
+                          break;
+                      }
+                      break;
+              case "espaniol":
+                      switch (nom_audio) {
+                        case "btn1":
+                          this.reproducir('amarillo');
+                          break;
+                        case "btn2":
+                          this.reproducir('verde');
+                          break;
+                        case "btn3":
+                          this.reproducir('naranja');
+                          break;
+                        case "btn4":
+                          this.reproducir('azul');
+                          break;
+                        case "btn5":
+                          this.reproducir('rojo');
+                          break;
+                        default:
+                          // code...
+                          break;
+                      }
+                      break;
+              case "ingles":
+                    switch (nom_audio) {
+                      case "btn1":
+                        this.reproducir('yellow');
+                        break;
+                      case "btn2":
+                        this.reproducir('green');
+                        break;
+                      case "btn3":
+                        this.reproducir('orange');
+                        break;
+                      case "btn4":
+                        this.reproducir('blue');
+                        break;
+                      case "btn5":
+                        this.reproducir('red');
+                        break;
+                      default:
+                        // code...
+                        break;
+                    }             
+            }        
       }
+  }
+
+  reproducir(nom_audio) {
+    const audio = new Audio('assets/sounds/' + nom_audio + '.mp3');
+    audio.play();
+  }
+  idiomaEspaniol(){
+    this.reproducir('español');
+    // localStorage.setItem('idioma', JSON.stringify("espaniol"));
+    localStorage.setItem("idioma", "espaniol");
+    console.log("cambie a español")
+  }
   
-  
-      
-    }
-    idiomaEspaniol(){
-      this.reproducir('español');
-      localStorage.setItem('idioma', JSON.stringify("espaniol"));
-    }
-  
-    idiomaIngles(){
-      this.reproducir('english');
-      localStorage.setItem('idioma', JSON.stringify("ingles"));
-    }
-    idiomaPortugues(){
-      this.reproducir('portugues');
-      localStorage.setItem('idioma', JSON.stringify("portugues"));
-    }
+  idiomaIngles(){
+    this.reproducir('english');
+    // localStorage.setItem('idioma', JSON.stringify("ingles"));
+    localStorage.setItem("idioma", "ingles");
+    console.log("cambie a ingles")
+  }
+  idiomaPortugues(){
+    this.reproducir('portugues');
+    localStorage.setItem("idioma", "portugues");
+    console.log("cambie a portugues")
+    // localStorage.setItem('idioma', JSON.stringify("portugues"));
+  }
 
     irAAnimales(){
-      console.log("voy a animales");
-      this.reproducir('animales');
+      switch (this.idioma) {    
+        case "portugues":
+               this.reproducir('animalesP');
+               break;
+        case "espaniol":
+               this.reproducir('animales');
+               break;  
+        case "ingles":
+               this.reproducir('animals');
+               break;  
+      } 
       localStorage.setItem('tipo_juego', "animales");
       this.router.navigate(['/home/animal'])
     }
   
     irANumeros(){
-      console.log("voy a numeros");
-      this.reproducir('numeros');
+      switch (this.idioma) {    
+        case "portugues":
+               this.reproducir('numerosP');
+               break;
+        case "espaniol":
+               this.reproducir('numeros');
+               break;  
+        case "ingles":
+               this.reproducir('numbers');
+               break;  
+      } 
+
       localStorage.setItem('tipo_juego', "numeros");
       this.router.navigate(['/home/numero'])
     }
