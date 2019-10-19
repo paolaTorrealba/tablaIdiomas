@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-animal',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./animal.component.scss'],
 })
 export class AnimalComponent implements OnInit {
-  
+    idioma:string;
     tipo_juego: string;
     bandera: boolean;
     btn1: string;
@@ -20,8 +21,9 @@ export class AnimalComponent implements OnInit {
     img_source4: string = "";
     img_source5: string = "";
   
-    constructor() {
-      this.bandera = JSON.parse(localStorage.getItem('idioma'));
+    constructor(public router: Router) {
+      this.idioma=JSON.parse(localStorage.getItem('idioma'));
+      // this.bandera = JSON.parse(localStorage.getItem('idioma'));
       this.tipo_juego = localStorage.getItem('tipo_juego');
   
       this.img_source1 = "./assets/images/leon.png";
@@ -35,15 +37,16 @@ export class AnimalComponent implements OnInit {
     ngOnInit() {}
   
     reproducir(nom_audio) {
+      console.log("audio:", nom_audio);
       const audio = new Audio('assets/sounds/' + nom_audio + '.mp3');
       audio.play();
     }
   
     reproducirAudio(nom_audio){
-   
+      console.log("animal audio:", nom_audio);
       switch (this.tipo_juego) {
         case "animales":
-          if (this.bandera) {
+          if (this.idioma=="espaniol") {
             switch (nom_audio) {
               case "btn1":
                 this.reproducir('leon');
@@ -106,8 +109,24 @@ export class AnimalComponent implements OnInit {
 	idiomaPortugues(){
 		this.reproducir('portugues');
 		localStorage.setItem('idioma', JSON.stringify("portugues"));
-	}
+  }
+  
+  irANumeros(){
+    console.log("voy a numeros");
+    this.reproducir('numeros');
+    // localStorage.setItem('tipo_juego', JSON.stringify("numeros"));
+		localStorage.setItem('tipo_juego', "numeros");
+    this.router.navigate(['/home/numero'])
+  }
 
+  irAColores(){
+    console.log("voy a colores");
+    this.reproducir('colores');
+    localStorage.setItem('tipo_juego', "colores");
+    this.router.navigate(['/home/juego'])
+  }
+
+ 
   
   }
   

@@ -60,20 +60,24 @@ export class HomeComponent implements OnInit {
   }
 
   reproducirAudio(nom_audio){
+		console.log("home audio:", nom_audio);
   	//console.log(this.bandera);
   	//console.log(nom_audio);
   	if(this.bandera)
   	{
   		switch (nom_audio) {
-  			case "colores":
+				case "colores":
+				console.log("home audio:", nom_audio);
   				this.reproducir('colores');
           localStorage.setItem('tipo_juego', "colores");
   				break;
-  			case "numeros":
+				case "numeros":
+				console.log("home audio:", nom_audio);
   				this.reproducir('numeros');
 					localStorage.setItem('tipo_juego', "numeros");					
   				break;
-  			case "animales":
+				case "animales":
+				console.log("home audio:", nom_audio);
   				this.reproducir('animales');
           localStorage.setItem('tipo_juego', "animales");
   				break;

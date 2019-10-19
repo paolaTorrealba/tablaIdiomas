@@ -5,10 +5,10 @@
 					</ion-fab-button>				
 					<ion-fab-list side="buttom">
 						<ion-fab-button>
-								<img style="width: 60%;" src="./assets/images/animales.png" alt="" /> 
+								<img style="width: 60%;" src="./assets/images/animales.png" alt=""   (click)="irAAnimales()"/> 
 							</ion-fab-button>                 
 						<ion-fab-button>
-							   <img style="width: 60%;" src="./assets/images/numeros.png" alt="" /> 
+							   <img style="width: 60%;" src="./assets/images/numeros.png" alt=""  (click)="irANumeros()"/> 
 						</ion-fab-button>			
 					</ion-fab-list>
 	</ion-fab>
@@ -31,32 +31,27 @@
       <div class="row">	
 			<div class="col-sm-2 col-md-12">
 					<ion-button style="height: 100px;" size="large" expand="block" (click)="reproducirAudio('btn1')">
-				    	<div class="sombreado"></div>
-				      <img id="img-btn1" src="{{img_source1}}" alt="">     
+				         <img id="img-btn1" src="{{img_source1}}" alt="">     
 			   	</ion-button>
 			</div><br>
 	  	<div class="col-sm-2 col-md-12">
 					<ion-button style="height: 100px;" size="large" expand="block" (click)="reproducirAudio('btn2')">
-				    	<div class="sombreado"></div>
-				      <img id="img-btn1" src="{{img_source2}}" alt="">     
+				        <img id="img-btn1" src="{{img_source2}}" alt="">     
 			   	</ion-button>
 			</div><br>
 			<div class="col-sm-2 col-md-12">
 					<ion-button style="height: 100px;" size="large" expand="block"  (click)="reproducirAudio('btn3')">
-				    	<div class="sombreado"></div>
-				      <img id="img-btn1" src="{{img_source3}}" alt="">     
+				        <img id="img-btn1" src="{{img_source3}}" alt="">     
 			   	</ion-button>
 			</div><br>
 			<div class="col-sm-2 col-md-12">
 					<ion-button style="height: 100px;" size="large" expand="block" (click)="reproducirAudio('btn4')">
-				    	<div class="sombreado"></div>
-				      <img id="img-btn1" src="{{img_source4}}" alt="">     
+				         <img id="img-btn1" src="{{img_source4}}" alt="">     
 			   	</ion-button>
 			</div><br>
       <div class="col-sm-2 col-md-12">
 					<ion-button style="height: 100px;" size="large" expand="block" (click)="reproducirAudio('btn5')">
-				    	<div class="sombreado"></div>
-				      <img id="img-btn1" src="{{img_source5}}" alt="">     
+				        <img id="img-btn1" src="{{img_source5}}" alt="">     
 			   	</ion-button>
       </div>
     </div>

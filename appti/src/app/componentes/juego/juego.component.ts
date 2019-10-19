@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-juego',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JuegoComponent implements OnInit {
   
-
+    idioma:string;
     tipo_juego: string;
     bandera: boolean;
     btn1: string;
@@ -21,12 +22,16 @@ export class JuegoComponent implements OnInit {
     img_source4: string = "";
     img_source5: string = "";
   
-    constructor() {
-      this.bandera = JSON.parse(localStorage.getItem('idioma'));
+    constructor(public router: Router) {
+      // this.bandera = JSON.parse(localStorage.getItem('idioma'));
+      this.idioma= JSON.parse(localStorage.getItem('idioma'));
       this.tipo_juego = localStorage.getItem('tipo_juego');
+      console.log(this.tipo_juego);
+      console.log(this.idioma);
   
       switch (this.tipo_juego) {
         case "colores":
+        console.log("estoy en colores");
             this.img_source1 = "./assets/images/amarillo.png";
             this.img_source2 = "./assets/images/verde.png";
             this.img_source3 = "./assets/images/naranja.png";
@@ -41,7 +46,12 @@ export class JuegoComponent implements OnInit {
   
     }
   
-    ngOnInit() {}
+    ngOnInit() {
+      this.idioma= JSON.parse(localStorage.getItem('idioma'));
+      this.tipo_juego = localStorage.getItem('tipo_juego');
+      console.log("estoy en :",this.tipo_juego);
+      console.log("el idioma es :",this.idioma);
+    }
   
     reproducir(nom_audio) {
       const audio = new Audio('assets/sounds/' + nom_audio + '.mp3');
@@ -55,7 +65,7 @@ export class JuegoComponent implements OnInit {
   
       switch (this.tipo_juego) {
         case "colores":
-          if (this.bandera) {
+          if (this.idioma=="espaniol") {
             switch (nom_audio) {
               case "btn1":
                 this.reproducir('amarillo');
@@ -166,6 +176,20 @@ export class JuegoComponent implements OnInit {
     idiomaPortugues(){
       this.reproducir('portugues');
       localStorage.setItem('idioma', JSON.stringify("portugues"));
+    }
+
+    irAAnimales(){
+      console.log("voy a animales");
+      this.reproducir('animales');
+      localStorage.setItem('tipo_juego', "animales");
+      this.router.navigate(['/home/animal'])
+    }
+  
+    irANumeros(){
+      console.log("voy a numeros");
+      this.reproducir('numeros');
+      localStorage.setItem('tipo_juego', "numeros");
+      this.router.navigate(['/home/numero'])
     }
   
   }

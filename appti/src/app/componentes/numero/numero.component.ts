@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-numero',
@@ -19,9 +20,11 @@ export class NumeroComponent implements OnInit {
   img_tres: string = "";
   img_cuatro: string = "";
   img_cinco: string = "";
+  idioma:string;
 
-  constructor() {
-    this.bandera = JSON.parse(localStorage.getItem('idioma'));
+  constructor(public router: Router) {
+    // this.bandera = JSON.parse(localStorage.getItem('idioma'));
+    this.idioma = JSON.parse(localStorage.getItem('idioma'));
     this.tipo_juego = localStorage.getItem('tipo_juego');
 
    
@@ -45,7 +48,7 @@ export class NumeroComponent implements OnInit {
  
     switch (this.tipo_juego) {
       case "numeros":
-        if (this.bandera) {
+        if (this.idioma=="espaniol") {
           switch (nom_audio) {
             case "btn1":
               this.reproducir('uno');
@@ -108,6 +111,20 @@ idiomaIngles(){
 idiomaPortugues(){
   this.reproducir('portugues');
   localStorage.setItem('idioma', JSON.stringify("portugues"));
+}
+
+irAAnimales(){
+  console.log("voy a animales");
+  this.reproducir('animales');
+  localStorage.setItem('tipo_juego', "animales");
+  this.router.navigate(['/home/animal'])
+}
+
+irAColores(){
+  console.log("voy a colores");
+  this.reproducir('colores');
+  localStorage.setItem('tipo_juego', "colores");
+  this.router.navigate(['/home/juego'])
 }
 
 }

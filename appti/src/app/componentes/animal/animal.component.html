@@ -5,10 +5,10 @@
                 </ion-fab-button>				
                 <ion-fab-list side="buttom">
                     <ion-fab-button>
-                        <img style="width: 60%;" src="./assets/images/numeros.png" alt="" /> 
+                        <img style="width: 60%;" src="./assets/images/numeros.png" alt=""  (click)="irANumeros()"  /> 
                     </ion-fab-button>  
                     <ion-fab-button>
-                        <img style="width: 60%;" src="./assets/images/colores.png" alt="" /> 
+                        <img style="width: 60%;" src="./assets/images/colores.png" alt=""  (click)="irAColores()"  /> 
                     </ion-fab-button>  
                 </ion-fab-list>
         </ion-fab>
@@ -30,28 +30,28 @@
       </ion-fab>
     <div class="row">	
         <div class="col-sm-2 col-md-12">
-                <ion-button style="height: 100px;" size="large" expand="block"  (click)="reproducirAudio('btn1')">
-                  <img id="img-btn1" src="{{img_source1}}" alt="">     
+            <ion-button style="height: 100px;" size="large" expand="block"  (click)="reproducirAudio('btn1')">
+                     <img style="width: 30%;" id="img-btn1" src="{{img_source1}}" alt="">     
             </ion-button>
         </div><br>
         <div class="col-sm-2 col-md-12">
-                <ion-button style="height: 100px;" size="large" expand="block"   (click)="reproducirAudio('btn2')">
-                    <img id="img-btn2" src="{{img_source2}}" alt="">     
+            <ion-button style="height: 100px;" size="large" expand="block"   (click)="reproducirAudio('btn2')">
+                <img style="width: 30%;" id="img-btn2" src="{{img_source2}}" alt="">     
             </ion-button>
         </div><br/>
         <div class="col-sm-2 col-md-12">
-               <ion-button style="height: 100px;" size="large" expand="block"  (click)="reproducirAudio('btn3')">
-                <img id="img-btn3" src="{{img_source3}}" alt="">     
+            <ion-button style="height: 100px;" size="large" expand="block"  (click)="reproducirAudio('btn3')">
+                <img style="width: 30%;" id="img-btn3" src="{{img_source3}}" alt="">     
             </ion-button>
         </div><br>
         <div class="col-sm-2 col-md-12">
-                <ion-button style="height: 100px;" size="large" expand="block"  (click)="reproducirAudio('btn4')">
-                   <img id="img-btn4" src="{{img_source4}}" alt="">     
+             <ion-button style="height: 100px;" size="large" expand="block"  (click)="reproducirAudio('btn4')">
+                <img style="width: 30%;" id="img-btn4" src="{{img_source4}}" alt="">     
             </ion-button>
         </div><br>
         <div class="col-sm-2 col-md-12">
-                <ion-button style="height: 100px;" size="large" expand="block"  (click)="reproducirAudio('btn5')">
-                <img id="img-btn5" src="{{img_source5}}" alt="">     
+            <ion-button style="height: 100px;" size="large" expand="block"  (click)="reproducirAudio('btn5')">
+                <img style="width: 30%;" id="img-btn5" src="{{img_source5}}" alt="">     
             </ion-button>
         </div>
   </div>

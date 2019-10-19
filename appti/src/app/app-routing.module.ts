@@ -13,7 +13,8 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'home/juego', component: JuegoComponent },
     { path: 'home/numero', component: NumeroComponent },
-    { path: 'home/animal', component: AnimalComponent}
+    { path: 'home/animal', component: AnimalComponent},
+
   ];
 @NgModule({
   imports: [
